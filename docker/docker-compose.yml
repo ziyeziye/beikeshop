@@ -1,0 +1,57 @@
+services:
+    # mysql: # 如果需要使用 mysql 请取消这里以及php容器的相关注释
+    #     image: mysql:8
+    #     container_name: mysql
+    #     privileged: false
+    #     restart: always
+    #     environment:
+    #         - MYSQL_ROOT_PASSWORD=root # 请替换为你的 mysql 密码
+    #         - MYSQL_DATABASE=eshop # 请替换为你的 mysql 数据库名
+    #     volumes:
+    #         - ./mysql:/var/lib/mysql/
+    #     command: ["mysqld", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    php:
+        build:
+            context: ./php
+        restart: unless-stopped
+        container_name: php
+        privileged: true
+        # depends_on:
+        #     - mysql
+        # links:
+        #     - mysql
+        ports:
+            - "127.0.0.1:9002:9000"
+        volumes:
+            - ../:/app
+            - /etc/localtime:/etc/localtime:ro
+    caddy:
+      image: caddy
+      container_name: caddy
+      restart: always
+      privileged: true
+      ports:
+        - "80:80"
+        - "443:443"
+      depends_on:
+        - php
+      links:
+        - php
+      volumes:
+        - ./Caddyfile:/etc/caddy/Caddyfile
+        - ../:/app:rw
+        - /etc/localtime:/etc/localtime:ro
+    ngrok: # 使用 ngrok 内网穿透访问，也可以注释这块内容，自行指定域名结合caddy使用
+      image: ngrok/ngrok:latest
+      container_name: ngrok
+      command:
+        - "http"
+        - "--url"
+        - ${NGROK_DOMAIN} # 请替换为你的 ngrok 域名, 也可以直接删除这行使用随机域名
+        - "caddy:80"
+      depends_on:
+        - caddy
+      environment:
+        NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN} # 请替换为你的 ngrok 令牌 或者在环境变量中设置 NGROK_AUTHTOKEN=你的令牌
+      ports:
+        - 4040:4040
