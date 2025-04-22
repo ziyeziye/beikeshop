@@ -1,0 +1,19 @@
+{
+    "code": "black_theme",
+    "name": {
+        "zh_cn": "黑色主题",
+        "en": "Black Theme"
+    },
+    "description": {
+        "zh_cn": "黑色主题",
+        "en": "Black Theme"
+    },
+    "type": "theme",
+    "version": "v1.0.0",
+    "icon": "/image/logo.png",
+    "theme": "image/black-theme.jpg",
+    "author": {
+        "name": "test",
+        "email": "test@test.com"
+    }
+}
