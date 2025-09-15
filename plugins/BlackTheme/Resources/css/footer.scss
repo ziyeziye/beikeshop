@@ -9,14 +9,9 @@
  */
 
 footer {
-  background: #f6f6f8;
   margin-top: 1rem;
   position: relative;
   overflow: hidden;
-
-  @media (max-width:768px) {
-    border-top: 1px solid #eee;
-  }
 
   .footer-wrapper {
     position: relative;
@@ -33,7 +28,6 @@ footer {
 
   .services-wrap {
     padding: 2.2rem 0;
-    border-bottom: 1px solid #e7e7e7;
 
     @media (max-width:768px) {
       padding: .5rem 0;
@@ -61,12 +55,10 @@ footer {
         margin-bottom: 4px;
         font-weight: bold;
         font-size: .9rem;
-        color: #333;
       }
 
       .sub-title {
         font-size: .7rem;
-        color: #8D94A0;
       }
     }
   }
@@ -91,21 +83,9 @@ footer {
 
     // }
 
-    a {
-      color: #666;
-
-      &:hover {
-        color: $primary;
-      }
-    }
-
     .logo {
       max-width: 240px;
       margin-bottom: 10px;
-    }
-
-    .text {
-      color: #010000;
     }
 
     h6 {
@@ -162,9 +142,6 @@ footer {
     }
 
     .footer-link-wrap {
-      @media (max-width: 768px) {
-        border-bottom: 1px solid #eee;
-      }
 
       &.active {
         .icon-open i:before {
@@ -192,9 +169,6 @@ footer {
   .footer-bottom {
     display: flex;
     align-items: center;
-    background: #EFEFF4;
-    color: #666;
-
     @media (min-width:768px) {
       min-height: 60px;
     }

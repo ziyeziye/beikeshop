@@ -22,6 +22,7 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="currency-dropdown">
+              <div class="line"></div>
               @foreach (currencies() as $currency)
                 <a class="dropdown-item"
                   href="{{ shop_route('currency.switch', [$currency->code]) }}">
@@ -48,6 +49,7 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="language-dropdown">
+            <div class="line"></div>
               @foreach ($languages as $language)
                 <a class="dropdown-item" href="{{ shop_route('lang.switch', [$language->code]) }}">
                   {{ $language->name }}
@@ -174,7 +176,8 @@
   <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvas-search-top" aria-labelledby="offcanvasTopLabel">
     <div class="offcanvas-header">
       <input type="text" class="form-control input-group-lg border-0 fs-4" focus placeholder="{{ __('common.input') }}" value="{{ request('keyword') }}">
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+       <!-- TODO: 这里的颜色改不掉233 -->
+      <button type="button" class="btn-close btn-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
   </div>
   @hook('header.after')

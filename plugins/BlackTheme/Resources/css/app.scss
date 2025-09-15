@@ -10,7 +10,19 @@
 
 @charset "UTF-8";
 
-$primary: #fd560f;
+$primary: #b49f80;
+$secondary: #b49f80;
+$thirdary: rgba(0,0,0,.2);
+$topHeaderBg: #2a4034;
+$bg: #232323;
+$brandText: #df2c2c;
+$primaryText: #fff;
+$primaryTextInverse: #000;
+$borderColor: #2f2f2f;
+$borderColorInverse: #fff;
+$secondaryText: #999;
+$btnBg: #b49f80;
+$btnOutline: #b49f80;
 
 @import './iconfont';
 @import './global';
@@ -38,3 +50,4 @@ $primary: #fd560f;
 @import './module/module-page';
 @import './module/module-image-301';
 @import './module/module-image-402';
+@import './theme';

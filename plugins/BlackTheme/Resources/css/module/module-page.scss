@@ -10,19 +10,6 @@
 
 .pages-wrap {
   transition: all 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
-    .page-info {
-      .pages-title {
-        a {
-          color: $primary;
-        }
-      }
-    }
-  }
-
   .image {
     margin-bottom: 10px;
 
@@ -44,7 +31,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     a {
-      color: #222;
       transition: all 0.3s ease-in-out;
     }
   }
@@ -57,7 +43,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     height: 40px;
-    color: #888;
+
     margin-bottom: 10px;
   }
 }

@@ -22,9 +22,9 @@
             <div class="card-header d-flex align-items-center justify-content-between">
               <h5 class="card-title">{{ __('shop/account/order_info.order_details') }}</h5>
               @if (current_customer())
-                <a class="btn btn-sm btn-primary" href="{{ shop_route('account.order.show', $order->number) }}">{{ __('common.view_more') }}</a>
+                <a class="btn btn-sm btn-secondary-theme" href="{{ shop_route('account.order.show', $order->number) }}">{{ __('common.view_more') }}</a>
                 @else
-                <a class="btn btn-sm btn-primary" href="{{ shop_route('orders.show', ['number' => $order->number, 'email' => $order->email]) }}">{{ __('common.view_more') }}</a>
+                <a class="btn btn-sm btn-secondary-theme" href="{{ shop_route('orders.show', ['number' => $order->number, 'email' => $order->email]) }}">{{ __('common.view_more') }}</a>
               @endif
             </div>
             <div class="card-body">

@@ -8,20 +8,17 @@
  * @LastEditTime  2022-09-16 20:55:37
  */
 
-body.page-login, body.page-forgotten {
+body.page-login,
+body.page-forgotten {
+  .card {
+    padding: 16px;
+  }
   @media (max-width: 768px) {
     overflow-x: hidden;
   }
 
   .el-form-item__error--inline {
     margin-left: 0;
-  }
-
-  .login-alert {
-    .layui-layer-btn0 {
-      background-color: #222;
-      border-color: #222;
-    }
   }
 
   .forgotten-link {
@@ -38,7 +35,6 @@ body.page-login, body.page-forgotten {
   }
 
   .login-item-header {
-    background: #f8f9fa;
     border-bottom: none;
     padding: 1.2rem 1.5rem;
     h6 {
@@ -86,7 +82,6 @@ body.page-login, body.page-forgotten {
     .title {
       position: relative;
       text-align: center;
-      color: #999;
 
       &::before {
         content: "";
@@ -99,7 +94,6 @@ body.page-login, body.page-forgotten {
       }
 
       span {
-        background-color: #fff;
         position: relative;
         padding: 0 5px;
         z-index: 1;
@@ -107,17 +101,9 @@ body.page-login, body.page-forgotten {
     }
 
     .btn {
-      // border-color: #ccc !important;
-      color: #666;
-
       img {
-        // transform: translateY(-50%);
         position: absolute;
         left: 40px;
-      }
-
-      &:hover {
-        background-color: #eee;
       }
     }
   }

@@ -38,7 +38,7 @@
           @include('shared.filter_bar_block')
           @if ($children)
             <div class="children-wrap me-2 mb-3 mt-n3">
-              <span class="text-secondary">{{ __('category.children') }}：</span>
+              <span class="text-secondary-theme">{{ __('category.children') }}：</span>
               @foreach ($children as $item)
               <a href="{{ $item['url'] }}">{{ $item['name'] }}</a>
               @endforeach

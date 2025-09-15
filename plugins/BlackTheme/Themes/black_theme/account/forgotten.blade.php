@@ -39,7 +39,7 @@
               </el-form-item>
 
               <div class="mt-5 mb-3 d-flex justify-content-between">
-                <button type="button" @click="submitForm('form')" class="btn w-50 btn-dark">
+                <button type="button" @click="submitForm('form')" class="btn w-50 btn-secondary-theme">
                   {{-- @{{ !isCode ? '发送验证码'  :  '提交'  }} --}}
                   <template v-if="!isCode">{{ __('shop/forgotten.send_code') }}</template>
                   <template v-else>{{ __('common.submit') }}</template>

@@ -52,7 +52,7 @@
                       </div>
                     </td>
                     <td>
-                      <a class="name text-truncate-2 mb-1 text-black fw-bold" :href="'products/' + product.product_id" v-text="product.name"></a>
+                      <a class="name text-truncate-2 fw-bold" :href="'products/' + product.product_id" v-text="product.name"></a>
                       @hook('cart.product.name.after')
                       <div class="text-size-min text-muted mb-1">@{{ product.variant_labels }}</div>
                       <div class="price text-muted" v-html="product.price_format"></div>
@@ -92,7 +92,7 @@
                   <li class="list-group-item border-bottom-0"><span>{{ __('shop/carts.product_total') }}</span><span class="total-price">@{{ amount_format }}</span></li>
                   <li class="list-group-item d-grid gap-2 mt-3 border-bottom-0">
                     @hookwrapper('cart.confirm')
-                    <button type="button" class="btn btn-primary fs-5 fw-bold" @click="checkedBtnToCheckout">{{ __('shop/carts.to_checkout') }}</button>
+                    <button type="button" class="btn btn-secondary-theme fs-5 fw-bold" @click="checkedBtnToCheckout">{{ __('shop/carts.to_checkout') }}</button>
                     @endhookwrapper
                   </li>
                 </ul>
@@ -112,7 +112,7 @@
           <p class="text-muted">{{ __('shop/carts.go_buy') }}</p>
         </div>
         <div class="empty-cart-action">
-          <a href="{{ shop_route('home.index') }}" class="btn btn-primary">{{ __('shop/carts.go_shopping') }}</a>
+          <a href="{{ shop_route('home.index') }}" class="btn btn-secondary-theme">{{ __('shop/carts.go_shopping') }}</a>
         </div>
       </div>
     </div>

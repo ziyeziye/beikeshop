@@ -72,7 +72,7 @@
     @if (request('style_list') == 'list')
       <div class="button-wrap mt-3">
         <button
-          class="btn btn-dark text-light"
+          class="btn btn-secondary-theme text-light"
           onclick="bk.addCart({sku_id: '{{ $product['sku_id'] }}'}, this)">
           <i class="bi bi-cart"></i>
           {{ __('shop/products.add_to_cart') }}
@@ -81,7 +81,7 @@
 
       <div class="mt-2">
         <button
-        class="btn btn-link p-0 btn-quick-view text-secondary"
+        class="btn btn-link p-0 btn-quick-view text-secondary-theme"
         product-id="{{ $product['sku_id'] }}"
         product-price="{{ $product['price'] }}"
         onclick="bk.productQuickView({{ $product['id'] }})">
@@ -89,7 +89,7 @@
         {{ __('common.quick_view') }}
       </button>
         <br>
-        <button class="btn btn-link p-0 mt-1 text-secondary btn-wishlist" data-in-wishlist="{{ $product['in_wishlist'] }}" onclick="bk.addWishlist('{{ $product['id'] }}', this)">
+        <button class="btn btn-link p-0 mt-1 text-secondary-theme btn-wishlist" data-in-wishlist="{{ $product['in_wishlist'] }}" onclick="bk.addWishlist('{{ $product['id'] }}', this)">
           <i class="bi bi-heart{{ $product['in_wishlist'] ? '-fill' : '' }} me-1"></i> {{ __('shop/products.add_to_favorites') }}
         </button>
       </div>

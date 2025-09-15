@@ -73,7 +73,7 @@
           @if ((system_setting('base.show_price_after_login') and current_customer()) or !system_setting('base.show_price_after_login'))
           <div class="price-wrap d-flex align-items-end">
             <div class="new-price fs-1 lh-1 fw-bold me-2">@{{ product.price_format }}</div>
-            <div class="old-price text-muted text-decoration-line-through" v-if="product.price != product.origin_price && product.origin_price !== 0">
+            <div class="old-price text-secondary-theme text-decoration-line-through" v-if="product.price != product.origin_price && product.origin_price !== 0">
               @{{ product.origin_price_format }}
             </div>
           </div>
@@ -89,7 +89,7 @@
           <div class="stock-and-sku mb-lg-4 mb-2">
             @hookwrapper('product.detail.quantity')
             <div class="d-lg-flex">
-              <span class="title text-muted">{{ __('product.quantity') }}:</span>
+              <span class="title text-secondary-theme">{{ __('product.quantity') }}:</span>
               <span :class="product.quantity > 0 ? 'text-success' : 'text-secondary'">
                 <template v-if="product.quantity > 0">{{ __('shop/products.in_stock') }}</template>
                 <template v-else>{{ __('shop/products.out_stock') }}</template>
@@ -100,18 +100,18 @@
             @if ($product['brand_id'])
             @hookwrapper('product.detail.brand')
             <div class="d-lg-flex">
-              <span class="title text-muted">{{ __('product.brand') }}:</span>
-              <a href="{{ shop_route('brands.show', $product['brand_id']) }}">{{ $product['brand_name'] }}</a>
+              <span class="title text-secondary-theme">{{ __('product.brand') }}:</span>
+              <a href="{{ shop_route('brands.show', $product['brand_id']) }}" class="text-brand">{{ $product['brand_name'] }}</a>
             </div>
             @endhookwrapper
             @endif
 
             @hookwrapper('product.detail.sku')
-            <div class="d-lg-flex"><span class="title text-muted">SKU:</span>@{{ product.sku }}</div>
+            <div class="d-lg-flex"><span class="title text-secondary-theme">SKU:</span>@{{ product.sku }}</div>
             @endhookwrapper
 
             @hookwrapper('product.detail.model')
-            <div class="d-lg-flex" v-if="product.model"><span class="title text-muted">{{ __('shop/products.model') }}:</span> @{{ product.model }}</div>
+            <div class="d-lg-flex" v-if="product.model"><span class="title text-secondary-theme">{{ __('shop/products.model') }}:</span> @{{ product.model }}</div>
             @endhookwrapper
           </div>
           @if (0)
@@ -160,7 +160,7 @@
                 @endhookwrapper
                 @hookwrapper('product.detail.add_to_cart')
                 <button
-                  class="btn btn-outline-dark ms-md-3 add-cart fw-bold"
+                  class="btn btn-outline-secondary text-primary-theme ms-md-3 add-cart fw-bold"
                   :product-id="product.id"
                   :product-price="product.price"
                   :disabled="!product.quantity"
@@ -170,7 +170,7 @@
                 @endhookwrapper
                 @hookwrapper('product.detail.buy_now')
                 <button
-                  class="btn btn-dark ms-3 btn-buy-now fw-bold"
+                  class="btn btn-secondary-theme ms-3 btn-buy-now fw-bold"
                   :disabled="!product.quantity"
                   :product-id="product.id"
                   :product-price="product.price"
@@ -184,7 +184,7 @@
               @if (current_customer() || !request('iframe'))
                 @hookwrapper('product.detail.wishlist')
                 <div class="add-wishlist">
-                  <button class="btn btn-link ps-md-0 text-secondary" data-in-wishlist="{{ $product['in_wishlist'] }}" onclick="bk.addWishlist('{{ $product['id'] }}', this)">
+                  <button class="btn btn-link ps-md-0 text-secondary-theme" data-in-wishlist="{{ $product['in_wishlist'] }}" onclick="bk.addWishlist('{{ $product['id'] }}', this)">
                     <i class="bi bi-heart{{ $product['in_wishlist'] ? '-fill' : '' }} me-1"></i> <span>{{ __('shop/products.add_to_favorites') }}</span>
                   </button>
                 </div>

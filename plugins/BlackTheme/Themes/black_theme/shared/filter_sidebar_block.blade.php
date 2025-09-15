@@ -44,7 +44,7 @@
         </div>
         <div class="card-body p-0">
           <div id="price-slider" class="mb-2"><div class="slider-bg"></div></div>
-          <div class="text-secondary price-range d-flex justify-content-between">
+          <div class="price-range d-flex justify-content-between">
             <div>
               {{ __('common.text_form') }}
               <span class="min">{{ currency_format($filter_data['price']['select_min'], current_currency_code()) }}</span>

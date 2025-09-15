@@ -9,13 +9,13 @@
  */
 
 body.page-account {
+  
   .account-card {
     border: none;
 
     .card-items {
       > a {
         width: 25%;
-        color: #444444;
         text-decoration: none !important;
         i {
           font-size: 2rem;
@@ -34,7 +34,6 @@ body.page-account {
     }
 
     .order-wrap {
-      background-color: #f6f8f9;
 
       @media (min-width:768px) {
         padding: 2rem 1rem;
@@ -43,7 +42,6 @@ body.page-account {
       .icon {
         i {
           font-size: 4.5rem;
-          color: #777;
         }
       }
 

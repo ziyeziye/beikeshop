@@ -23,14 +23,11 @@
     transition: all 0.2s ease-in-out 0s;
 
     &:hover:before {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: 15px solid rgba(255, 255, 255, 0.5);
       opacity: 1;
     }
 
     &:before {
       box-sizing: border-box;
-      border: 0px solid rgba(0, 0, 0, 0.3);
       bottom: 0;
       opacity: 0;
       content: "";

@@ -28,17 +28,17 @@
                 <x-shop-alert type="success" msg="{{ session('success') }}" class="mt-4" />
               @endif
 
-              <div class="bg-light rounded-3 p-4 mb-4" style="background: #f6f9fc;">
+              <div class="bg-seconday-theme p-4 mb-4">
                 <div class="d-flex align-items-center">
-                  <img class="rounded-3" id="avatar" src="{{ image_resize($customer->avatar, 200, 200) }}"
+                  <img id="avatar" src="{{ image_resize($customer->avatar, 200, 200) }}"
                     width="90">
                   <div class="ps-3">
-                    <label class="btn btn-light shadow-sm bg-body mb-2" data-toggle="tooltip" title="Change your avatar">
+                    <label class="btn btn-secondary-theme shadow-sm mb-2" data-toggle="tooltip" title="Change your avatar">
                       <i class="bi bi-arrow-repeat"></i> {{ __('shop/account/edit.modify_avatar') }}
                       <input type="file" class="d-none" id="update-btn" name="" accept="image/*">
                       <input type="hidden" id="avatar-input" name="avatar" value="{{ $customer->avatar }}">
                     </label>
-                    <div class="p mb-0 fs-ms text-muted">{{ __('shop/account/edit.suggest') }}</div>
+                    <div class="p mb-0 fs-ms text-secondary-theme">{{ __('shop/account/edit.suggest') }}</div>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@
                 </div>
                 @endhookwrapper
                 <div class="col-12 mt-4">
-                  <button class="btn btn-primary mt-sm-0" type="submit">{{ __('common.submit') }}</button>
+                  <button class="btn btn-secondary-theme mt-sm-0" type="submit">{{ __('common.submit') }}</button>
                 </div>
               </div>
             </form>
@@ -86,8 +86,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('shop/common.cancel') }}</button>
-          <button type="button" class="btn btn-primary cropper-crop">{{ __('shop/common.confirm') }}</button>
+          <button type="button" class="btn btn-secondary rounded-none" data-bs-dismiss="modal">{{ __('shop/common.cancel') }}</button>
+          <button type="button" class="btn btn-secondary-theme cropper-crop">{{ __('shop/common.confirm') }}</button>
         </div>
       </div>
     </div>

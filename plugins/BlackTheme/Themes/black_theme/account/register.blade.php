@@ -43,7 +43,7 @@
         </div>
       @endif
 
-      <button type="submit" class="btn btn-primary btn-block mb-4">登录</button>
+      <button type="submit" class="btn btn-secondary-theme btn-block mb-4">登录</button>
     </form>
   </div>
 @endsection

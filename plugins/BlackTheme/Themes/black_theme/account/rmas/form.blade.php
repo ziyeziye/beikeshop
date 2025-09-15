@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="col-12 mt-4">
-                  <button class="btn btn-primary mt-sm-0 w-min-100" type="submit">{{ __('shop/common.submit') }}</button>
+                  <button class="btn btn-secondary-theme mt-sm-0 w-min-100" type="submit">{{ __('shop/common.submit') }}</button>
                 </div>
               </div>
             </form>

@@ -9,30 +9,37 @@
  */
 
 header {
-  background: #fff;
-
   .top-wrap {
     height: 40px;
-    background: #F7F8FA;
     display: flex;
 
-    > .container, .container-fluid {
+    > .container,
+    .container-fluid {
       max-width: 1700px;
 
-      @media (max-width:768px) {
+      @media (max-width: 768px) {
         padding: 0 10px;
       }
     }
 
     .dropdown {
+      .line {
+        height: 2px;
+        position: absolute;
+        left: 0px;
+        width: 0px;
+        top: 0px;
+        transition: all 0.2s ease-in-out;
+      }
       &:hover {
-        background-color: #fff;
-
+        .line{
+          width: 100%;
+        }
         .dropdown-menu {
           display: block;
           border: none;
-          box-shadow: 0 0 15px rgb(0, 0, 0, .1);
-
+          box-shadow: none;
+          border-radius: 0;
           &.dropdown-menu-end {
             right: 0;
           }
@@ -42,13 +49,9 @@ header {
   }
 
   .header-content {
-    .nav-item {
-      &:hover {
-        > a {
-          color: $primary;
-        }
-      }
-    }
+    position: relative;
+    padding: 1rem 0;
+    transition: all 0.2s ease-in-out;
 
     .dropdown {
       .dropdown-menu {
@@ -60,9 +63,8 @@ header {
         opacity: 0;
         display: block;
         transform-origin: top center;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         transform: translate(-50%, 0.5rem);
-        box-shadow: 0 0 15px rgb(0, 0, 0, .1);
       }
 
       &:hover {
@@ -73,14 +75,6 @@ header {
         }
       }
     }
-  }
-
-  .header-content {
-    position: relative;
-    background-color: #fff;
-    padding: 1rem 0;
-    transition: all .2s ease-in-out;
-    border-bottom: 1px solid #eee;
 
     // body:not(.page-home) & {
     //   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .04);
@@ -92,12 +86,11 @@ header {
       left: 0;
       right: 0;
       z-index: 999;
-      padding: .4rem 0;
-      border-color: transparent;
-      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .06);
+      padding: 0.4rem 0;
     }
 
-    > .container, .container-fluid {
+    > .container,
+    .container-fluid {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -111,7 +104,6 @@ header {
 
       > .navbar-nav {
         > .nav-item {
-          background-color: transparent;
 
           > .nav-link {
             font-size: 15px;
@@ -126,16 +118,12 @@ header {
               font-weight: 400;
               left: calc(50% - 0px);
               margin-left: 0px;
-
               &::before {
                 content: "";
                 position: absolute;
                 top: 100%;
                 left: 10px;
                 border: 4px solid;
-                border-color: inherit;
-                border-right-color: #0000!important;
-                border-bottom-color: #0000!important;
                 border-right-width: 7px;
                 border-left-width: 0;
               }
@@ -145,15 +133,6 @@ header {
 
         .group-name {
           font-size: 15px;
-        }
-
-        .ul-children {
-          a {
-            color: #7a7a7a;
-            &:hover {
-              color: $primary;
-            }
-          }
         }
       }
     }
@@ -167,7 +146,6 @@ header {
 
     .right-btn {
       .nav-link {
-        color: #333;
         padding-right: 0.7rem;
         padding-left: 0.7rem;
         position: relative;
@@ -187,25 +165,19 @@ header {
     display: none;
     width: 23px;
     zoom: 0.9;
-    height: 23px;
-    line-height: 24px;
-    background-color: #fd560f;
-    color: #fff;
+    height: 20px;
+    line-height: 20px;
     border-radius: 50%;
   }
 
   .header-mobile {
-    border-bottom: 1px solid #eee;
-
+   
     &.fixed {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 999;
-      box-shadow: 0 8px 14px 0 rgba(0, 0, 0, .1);
-      background: #fff;
-      border-color: transparent;
     }
 
     .mobile-content {
@@ -297,19 +269,9 @@ header {
     width: 100%;
   }
 
-  input {
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
   .btn-close {
     padding: 1rem;
     opacity: 1;
-
-    &:hover {
-      background-color: #eee;
-    }
   }
 }
 
@@ -320,23 +282,16 @@ header {
 
     i {
       font-size: 20px;
-      color: #aaa;
-      &.bi-check-circle-fill {
-        color: $primary;
-      }
     }
   }
 
   .offcanvas-right-products {
     .product-list {
       padding: 1rem 0;
-      border-top: 1px solid #eee;
-
       .left {
         width: 80px;
         flex: 0 0 80px;
         height: 80px;
-        border: 1px solid #eee;
         margin-right: 10px;
 
         img {
@@ -352,23 +307,19 @@ header {
             height: 24px;
           }
         }
-
-        .offcanvas-products-delete {
-          cursor: pointer;
-          color: #999;
-        }
       }
     }
   }
 
   .offcanvas-footer {
-
+    .btn {
+      border-radius: 0;
+    }
   }
 }
 
 #offcanvas-mobile-menu {
   width: 80%;
-
   .offcanvas-header {
     padding: 10px 20px 10px 10px;
   }
@@ -377,11 +328,7 @@ header {
     padding: 0;
 
     #menu-accordion {
-      border-top: 1px solid #e5e5e5;
-
       .accordion-item {
-        border-bottom: 1px solid #e5e5e5;
-
         .nav-item-text {
           display: flex;
           align-items: center;
@@ -408,8 +355,6 @@ header {
                 transform: translate(0, -50%);
                 border: 4px solid;
                 border-right-width: 7px;
-                border: 5px solid #0000;
-                border-right-color: inherit;
               }
             }
           }
@@ -418,17 +363,11 @@ header {
             width: 44px;
             height: 44px;
             display: flex;
-            border-left: 1px solid #e5e5e5;
             align-items: center;
             justify-content: center;
-            &:active {
-              background-color: #eee;
-            }
-
             &[aria-expanded="true"] {
-              background-color: #eee;
               i {
-                transform:rotate(180deg);
+                transform: rotate(180deg);
               }
             }
           }
@@ -448,9 +387,7 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                &:active {
-                  background-color: #eee;
-                }
+               
 
                 &[aria-expanded="true"] {
                   i::before {
@@ -459,15 +396,11 @@ header {
                 }
               }
             }
-
-            .nav {
-              a {
-                color: #777;
-              }
-            }
           }
         }
       }
     }
   }
 }
+
+

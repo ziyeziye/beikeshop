@@ -19,7 +19,7 @@
         <div class="card h-min-600">
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title">{{ __('shop/account/addresses.index') }}</h5>
-            <button v-if="addresses.length" class="btn btn-primary btn-sm mb-3" @click="editAddress"><i class="bi bi-plus-square-dotted me-1"></i>
+            <button v-if="addresses.length" class="btn btn-secondary-theme btn-sm mb-3" @click="editAddress"><i class="bi bi-plus-square-dotted me-1"></i>
               {{ __('shop/account/addresses.add_address') }}</button>
           </div>
           <div class="card-body h-600 pt-0">
@@ -40,7 +40,7 @@
                           v-if="address.default">{{ __('shop/account/addresses.default_address') }}</span></div>
                       <div>
                         <button type="button" class="me-2 btn btn-outline-secondary btn-sm" @click.stop="deleteAddress(index)">{{ __('shop/account/addresses.delete') }}</button>
-                        <button type="button" href="javascript:void(0)" class="btn btn-outline-secondary btn-sm" @click.stop="editAddress(index)">{{ __('shop/account/addresses.edit') }}</button>
+                        <button type="button" href="javascript:void(0)" class="btn btn-secondary-theme btn-sm" @click.stop="editAddress(index)">{{ __('shop/account/addresses.edit') }}</button>
                       </div>
                     </div>
                   </div>
@@ -48,7 +48,7 @@
               </div>
               <div v-else class="text-center">
                 <x-shop-no-data />
-                <button class="btn btn-dark mb-3" @click="editAddress"><i class="bi bi-plus-square-dotted me-1"></i>
+                <button class="btn btn-secondary-theme mb-3" @click="editAddress"><i class="bi bi-plus-square-dotted me-1"></i>
                   {{ __('shop/account/addresses.add_address') }}</button>
               </div>
             </div>

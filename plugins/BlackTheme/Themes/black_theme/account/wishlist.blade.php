@@ -37,7 +37,7 @@
                         <div class="">
                           <a class="btn btn-outline-secondary btn-sm"
                             href="{{ shop_route('products.show', $item['product_id']) }}">{{ __('shop/account/wishlist.check_details') }}</a>
-                          <button class="btn btn-outline-secondary add-cart btn-sm">{{ __('shop/products.add_to_cart') }}</button>
+                          <button class="btn btn-secondary-theme add-cart btn-sm">{{ __('shop/products.add_to_cart') }}</button>
                           <button class="btn btn-outline-danger btn-sm remove-wishlist"><i class="bi bi-x-lg"></i></button>
                         </div>
                       </td>

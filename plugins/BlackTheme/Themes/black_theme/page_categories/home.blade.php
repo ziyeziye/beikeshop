@@ -21,12 +21,12 @@
                 </a>
                 @endif
                 <div class="post-info">
-                  <h5 class="card-title mb-2"><a class="text-black" href="{{ shop_route('pages.show', [$page->id]) }}">{{ $page->description->title }}</a></h5>
-                  <p class="fs-6 mb-3 text-secondary">{{ $page->created_at }}</p>
+                  <h5 class="card-title mb-2"><a class="text-primary-theme" href="{{ shop_route('pages.show', [$page->id]) }}">{{ $page->description->title }}</a></h5>
+                  <p class="fs-6 mb-3 text-secondary-theme">{{ $page->created_at }}</p>
                   @if ($page->description->summary)
                     <p class="card-text mb-3">{{ $page->description->summary ?? '' }}</p>
                   @endif
-                  <div class="text-danger"><a href="{{ shop_route('pages.show', [$page->id]) }}">{{ __('shop/account.check_details') }}<i class="bi bi-arrow-right-short"></i></a></div>
+                  <div ><a href="{{ shop_route('pages.show', [$page->id]) }}" class="text-brand">{{ __('shop/account.check_details') }}<i class="bi bi-arrow-right-short"></i></a></div>
                 </div>
               </div>
 

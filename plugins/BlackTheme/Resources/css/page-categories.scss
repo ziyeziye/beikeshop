@@ -21,7 +21,6 @@ body.page-categories {
     }
 
     .card:not(:last-of-type) {
-      border-bottom: 1px solid #E6E6E6;
       margin-bottom: 1.4rem;
       padding-bottom: 1.4rem;
     }
@@ -33,27 +32,13 @@ body.page-categories {
     }
 
     a {
-      color: #333;
       margin-right: 4px;
-
-      &:hover {
-        color: $primary;
-      }
     }
   }
 
   .style-wrap {
     label {
       cursor: pointer;
-      &.active {
-        svg {
-          fill: $primary;
-        }
-      }
-
-      svg {
-        fill: #999;
-      }
     }
   }
 
@@ -65,19 +50,8 @@ body.page-categories {
         display: inline-block;
         cursor: pointer;
         font-size: 12px;
-        background: #f3f3f3;
         border: none;
-        color: #666;
         padding: 4px 12px;
-        &.delete-all {
-          background: $primary;
-          color: #fff;
-        }
-
-        &:hover {
-          background: $primary;
-          color: #fff;
-        }
       }
     }
   }
@@ -120,7 +94,7 @@ body.page-categories {
     cursor: pointer;
 
     .ui-widget-header {
-      background: $primary;
+     
       position: absolute;
       top: 50%;
       border-radius: 0;
@@ -129,7 +103,7 @@ body.page-categories {
     }
 
     .slider-bg {
-      background: #e3e3e3;
+     
       position: absolute;
       top: 50%;
       width: 100%;
@@ -143,7 +117,7 @@ body.page-categories {
       cursor: ew-resize;
       border: none !important;
       border-radius: 0;
-      background: $primary;
+     
       outline: none !important;
     }
   }
@@ -152,8 +126,6 @@ body.page-categories {
 .sidebar-widget {
   list-style: none;
   padding: 0 0 1.4rem;
-  border-bottom: 1px solid #E6E6E6;
-
   li {
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
@@ -168,7 +140,6 @@ body.page-categories {
 
     .category-href {
       position: relative;
-      color: #333;
       overflow: hidden;
       text-overflow:ellipsis;
       white-space: nowrap;
@@ -178,7 +149,6 @@ body.page-categories {
     &.active {
       > a {
         font-weight: bold;
-        color: $primary;
       }
     }
   }
@@ -195,10 +165,6 @@ body.page-categories {
     width: 24px;
     height: 24px;
     text-align: center;
-    i {
-      color: #aaa;
-    }
-
     &.collapsed {
       transform: rotate(-180deg);
     }
@@ -209,11 +175,6 @@ body.page-categories {
   .attribute-item {
     .form-check-label {
       cursor: pointer;
-      &:hover {
-        .form-check-input {
-          border-color: $primary;
-        }
-      }
     }
   }
 }

@@ -8,7 +8,7 @@
       </div>
       <div class="product-mb-info ms-2">
         <div>
-          <a class="name text-truncate-2 mb-1 text-black fw-bold" :href="'products/' + product.product_id"
+          <a class="name text-truncate-2 mb-1 fw-bold" :href="'products/' + product.product_id"
             v-text="product.name"></a>
             @hook('cart.product.name.after')
           <div class="text-size-min text-muted mb-1">@{{ product.variant_labels }}</div>
@@ -40,7 +40,7 @@
     <div class="right">
       <span class="total-price fw-bold">@{{ amount_format }}</span>
       @hookwrapper('cart.confirm')
-      <button type="button" class="btn btn-primary btn-checkout fs-5 fw-bold" @click="checkedBtnToCheckout">{{
+      <button type="button" class="btn btn-secondary-theme btn-checkout fs-5 fw-bold" @click="checkedBtnToCheckout">{{
         __('shop/carts.to_checkout') }}</button>
       @endhookwrapper
     </div>
@@ -57,7 +57,7 @@
       <p class="text-muted">{{ __('shop/carts.go_buy') }}</p>
     </div>
     <div class="empty-cart-action">
-      <a href="{{ shop_route('home.index') }}" class="btn btn-primary">{{ __('shop/carts.go_shopping') }}</a>
+      <a href="{{ shop_route('home.index') }}" class="btn btn-secondary-theme">{{ __('shop/carts.go_shopping') }}</a>
     </div>
   </div>
 </div>

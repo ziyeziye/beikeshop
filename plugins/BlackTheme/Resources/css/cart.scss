@@ -9,13 +9,6 @@
  */
 
 body.page-checkout, body.page-cart {
-  background-color: #f6f8fa;
-
-  .breadcrumb-wrap {
-    background-color: transparent;
-    margin-bottom: 0;
-  }
-
   @media (max-width: 768px) {
     padding-bottom: 64px;
 
@@ -52,19 +45,10 @@ body.page-cart {
         border-top: none;
         td {
           vertical-align: middle;
-          border-color: #f0f2f4;
         }
-
-        // tr {
-        //   &.active {
-        //     background-color: #fff6f1;
-        //   }
-        // }
       }
 
       thead {
-        background-color: #F8F9FA;
-
         th {
           border-bottom: none;
           padding: 0.7rem 0.5rem;
@@ -91,14 +75,11 @@ body.page-cart {
     .card-header {
       padding-top: 1rem;
       border-bottom: none;
-      background-color: transparent;
     }
 
     .list-group {
       li {
-        background-color: transparent;
         padding: 0.7rem 0;
-        border-color: #EEEEEE;
 
         &:not(.d-grid) {
           display: flex;
@@ -107,7 +88,6 @@ body.page-cart {
         }
 
         .total-price {
-          color: #222222;
           font-size: 1.2rem;
           font-weight: bold;
         }
@@ -120,7 +100,6 @@ body.page-cart {
     margin-right: -12px;
 
     .mb-product-list {
-      background-color: #fff;
       margin-bottom: 10px;
       padding: 10px;
       display: flex;

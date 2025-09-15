@@ -20,7 +20,7 @@
     </div>
   @endif
   <div class="d-flex align-items-center right-per-page">
-    <div class="text-nowrap text-secondary">
+    <div class="text-nowrap text-secondary-theme">
       {{ __('common.showing_page', ['per_page' => request('per_page'), 'total' => $products->total()]) }}
     </div>
 

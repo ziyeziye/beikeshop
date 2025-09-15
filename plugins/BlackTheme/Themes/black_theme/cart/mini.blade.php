@@ -1,6 +1,7 @@
 <div class="offcanvas-header">
-  <h5 id="offcanvasRightLabel" class="mx-auto mb-0">{{ __('shop/carts.mini') }}</h5>
-  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <h5 id="offcanvasRightLabel" class="mb-0">{{ __('shop/carts.mini') }}</h5>
+  <!-- TODO: 这里的颜色改不掉233 -->
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 </div>
 <div class="offcanvas-body pt-0">
   @php $check = 0 @endphp
@@ -16,11 +17,12 @@
         <div class="product-info d-flex align-items-center">
           <div class="left"><a href="{{ shop_route('products.show', $cart['product_id']) }}" class="d-flex justify-content-center align-items-center h-100"><img src="{{ $cart['image_url'] ?: image_resize('', 160, 160) }}" class="img-fluid"></a></div>
           <div class="right flex-grow-1">
-            <a href="{{ shop_route('products.show', $cart['product_id']) }}" class="name fs-sm fw-bold mb-2 text-dark text-truncate-2" title="{{ $cart['name'] }}">{{ $cart['name'] }}</a>
-            <div class="text-muted mb-1 text-size-min">{{ $cart['variant_labels'] }}</div>
+            <a href="{{ shop_route('products.show', $cart['product_id']) }}" class="name fs-sm fw-bold mb-2 text-truncate-2 text-light" title="{{ $cart['name'] }}">{{ $cart['name'] }}</a>
+            <div class="mb-1 text-size-min product-attr">{{ $cart['variant_labels'] }}</div>
             <div class="product-bottom d-flex justify-content-between align-items-center">
-              <div class="price d-flex align-items-center">
-                {!! $cart['price_format'] !!} x
+              <div class="price d-flex align-items-center text-secondary">
+                <span class="text-brand">{!! $cart['price_format'] !!}&nbsp;</span>
+                 x
                 <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
                 data-id="{{ $cart['cart_id'] }}" data-sku="{{ $cart['sku_id'] }}" class="form-control p-1" value="{{ $cart['quantity'] }}">
               </div>
@@ -44,7 +46,7 @@
         <p class="text-muted">{{ __('shop/carts.go_buy') }}</p>
       </div>
       <div class="empty-cart-action">
-        <a href="{{ shop_route('home.index') }}" class="btn btn-primary">{{ __('shop/carts.go_shopping') }}</a>
+        <a href="{{ shop_route('home.index') }}" class="btn btn-secondary-theme">{{ __('shop/carts.go_shopping') }}</a>
       </div>
     </div>
   </div>
@@ -52,7 +54,7 @@
 
 @if ($carts)
   <div class="offcanvas-footer">
-    <div class="d-flex justify-content-between align-items-center mb-2 p-3 bg-light top-footer">
+    <div class="d-flex justify-content-between align-items-center mb-2 p-3 top-footer">
       <div class="select-wrap all-select d-flex align-items-center">
         <i class="bi {{ $check == count($carts) ? 'bi-check-circle-fill' : 'bi-circle' }}"></i>
         <span class="ms-1 text-secondary">{{ __('common.select_all') }}</span>
@@ -63,8 +65,8 @@
       </div>
     </div>
     <div class="p-4">
-      <a href="{{ shop_route('checkout.index') }}" class="btn w-100 fw-bold btn-dark to-checkout {{ !$check ? 'disabled' : '' }}">{{ __('shop/carts.to_checkout') }}</a>
-      <a href="{{ shop_route('carts.index') }}" class="btn w-100 fw-bold btn-outline-dark mt-2">{{ __('shop/carts.check_cart') }}</a>
+      <a href="{{ shop_route('checkout.index') }}" class="btn w-100 fw-bold btn-secondary-theme text-uppercase to-checkout {{ !$check ? 'disabled' : '' }}">{{ __('shop/carts.to_checkout') }}</a>
+      <a href="{{ shop_route('carts.index') }}" class="btn w-100 fw-bold btn-outline-secondary text-uppercase text-light mt-2">{{ __('shop/carts.check_cart') }}</a>
     </div>
   </div>
 @endif

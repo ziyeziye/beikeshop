@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="col-12 mt-4">
-                  <button class="btn btn-primary mt-sm-0" type="submit">{{ __('common.submit') }}</button>
+                  <button class="btn btn-secondary-theme mt-sm-0" type="submit">{{ __('common.submit') }}</button>
                 </div>
               </div>
 

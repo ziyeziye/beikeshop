@@ -32,7 +32,6 @@
     top: 2px;
     bottom: 2px;
     z-index: 9;
-    outline: 2px solid $primary;
   }
 
   .module-edit {
@@ -48,8 +47,6 @@
     display: none;
 
     .edit-wrap {
-      background-color: $primary;
-      color: #fff;
       display: flex;
       align-items: center;
 
@@ -66,16 +63,10 @@
             content: "";
             position: absolute;
             top: 0;
-            border: solid #0000;
-            border-right: solid $primary;
             border-width: 28px 10px 0 0;
             right: 100%;
           }
-          &:hover {
-            &:after {
-              border-right-color: darken($primary, 6%);
-            }
-          }
+         
         }
 
         &:last-of-type {
@@ -83,20 +74,9 @@
             content: "";
             position: absolute;
             top: 0;
-            border: solid #0000;
-            border-left: solid $primary;
             border-width: 28px 0 0 10px;
             left: 100%;
           }
-          &:hover {
-            &:after {
-              border-left-color: darken($primary, 6%);
-            }
-          }
-        }
-
-        &:hover {
-          background-color: darken($primary, 6%);
         }
       }
       // flex-wrap: wrap;

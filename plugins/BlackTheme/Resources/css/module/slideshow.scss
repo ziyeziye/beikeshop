@@ -9,41 +9,34 @@
  */
 
 .swiper.module-slideshow {
-  --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-  --swiper-navigation-color: #ff6600;/* 单独设置按钮颜色 */
-  --swiper-navigation-size: 30px;/* 设置按钮大小 */
-
-  .swiper-button-prev,.swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     display: none;
   }
 
   &:hover {
-    .swiper-button-prev,.swiper-button-next {
+    .swiper-button-prev,
+    .swiper-button-next {
       display: block;
     }
   }
 }
 
-
 .swiper-style-plus {
   position: relative;
 
-  .swiper-button-prev,.swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     width: 34px;
     height: 37px;
-    color: #999;
+
     @media (max-width: 768px) {
       display: none;
-    }
-
-    &:hover {
-      color: $primary;
     }
 
     &:after {
       font-size: 26px;
     }
-
   }
 
   .swiper-button-prev {

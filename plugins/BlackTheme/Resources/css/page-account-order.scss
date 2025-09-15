@@ -35,24 +35,10 @@ body.page-account-order-list {
         }
       }
 
-      .head-tr {
-        background: #f5f5f5;
-        td {
-          border-bottom-color: #f5f5f5;
-        }
-      }
-
       thead {
-        background: #f5f5f5;
         th {
           font-weight: 500;
           border: 0;
-        }
-      }
-
-      tbody {
-        td {
-          border: 1px solid #e5e5e5;
         }
       }
 
@@ -64,17 +50,17 @@ body.page-account-order-list {
           flex: 0 0 60px;
           margin-right: 10px;
 
-          @media (max-width:768px) {
+          @media (max-width: 768px) {
             flex: 0 0 50px;
-            width: 50px
+            width: 50px;
           }
         }
 
         .name {
-          @media (max-width:768px) {
+          @media (max-width: 768px) {
             a {
               overflow: hidden;
-              text-overflow:ellipsis;
+              text-overflow: ellipsis;
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
@@ -94,29 +80,20 @@ body.page-account-order-list {
     .header-wrapper {
       padding-bottom: 10px;
       margin-bottom: 12px;
-      border-bottom: 1px solid #eee;
     }
 
     .footer-wrapper {
       padding-top: 10px;
       margin-top: 12px;
-      border-top: 1px solid #eee;
     }
   }
 }
 
 body.page-account-order-info {
-  background-color: #F7F8FA;
-
-  .order-head {
-
-  }
-
   .product-list {
     display: flex;
     align-items: center; // flex-start | center
     justify-content: space-between;
-    border-bottom: 1px solid #eee;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     // justify-content: space-between; // flex-end | center | space-between
@@ -127,16 +104,12 @@ body.page-account-order-info {
     }
 
     .right {
-      color: #767676;
-
       @media (min-width: 768px) {
-        font-size: .9375rem;
+        font-size: 0.9375rem;
       }
 
       .name {
-        // font-weight: bold;
-        margin-bottom: .4rem;
-        color: #1a1a1a;
+        margin-bottom: 0.4rem;
       }
     }
   }
@@ -145,3 +118,5 @@ body.page-account-order-info {
     white-space: nowrap;
   }
 }
+
+

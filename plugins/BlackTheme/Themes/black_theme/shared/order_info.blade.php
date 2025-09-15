@@ -9,11 +9,11 @@
     <h6 class="card-title">{{ __('shop/account/order_info.order_details') }}</h6>
     <div>
       @if ($order->status == 'unpaid')
-        <a href="{{ shop_route('orders.pay', $order->number) }}" class="btn btn-primary btn-sm nowrap">{{ __('shop/account/order_info.to_pay') }}</a>
+        <a href="{{ shop_route('orders.pay', $order->number) }}" class="btn btn-secondary-theme btn-sm nowrap">{{ __('shop/account/order_info.to_pay') }}</a>
         <button class="btn btn-outline-secondary btn-sm cancel-order" type="button">{{ __('shop/account/order_info.cancel') }}</button>
       @endif
       @if ($order->status == 'shipped')
-        <button class="btn btn-primary btn-sm shipped-ed" type="button">{{ __('shop/account/order_info.confirm_receipt') }}</button>
+        <button class="btn btn-secondary-theme btn-sm shipped-ed" type="button">{{ __('shop/account/order_info.confirm_receipt') }}</button>
       @endif
       @hook('account.order.info.order_details.top.btns')
     </div>

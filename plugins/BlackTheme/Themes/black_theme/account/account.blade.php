@@ -25,19 +25,19 @@
           <div class="card-body">
             <div class="d-flex flex-nowrap card-items mb-4 py-3">
               <a href="{{ shop_route('account.order.index', ['status' => 'unpaid']) }}" class="d-flex flex-column align-items-center"><i class="iconfont">&#xf12f;</i><span
-                  class="text-muted text-center">{{ __('order.unpaid') }}</span></a>
+                  class="text-center">{{ __('order.unpaid') }}</span></a>
               <a href="{{ shop_route('account.order.index', ['status' => 'paid']) }}" class="d-flex flex-column align-items-center"><i class="iconfont">&#xf130;</i><span
-                  class="text-muted text-center">{{ __('shop/account.pending_send') }}</span></a>
+                  class="text-center">{{ __('shop/account.pending_send') }}</span></a>
               <a href="{{ shop_route('account.order.index', ['status' => 'shipped']) }}" class="d-flex flex-column align-items-center"><i class="iconfont">&#xf131;</i><span
-                  class="text-muted text-center">{{ __('shop/account.pending_receipt') }}</span></a>
+                  class="text-center">{{ __('shop/account.pending_receipt') }}</span></a>
               <a href="{{ shop_route('account.rma.index') }}" class="d-flex flex-column align-items-center"><i class="iconfont">&#xf132;</i><span
-                  class="text-muted text-center">{{ __('shop/account.after_sales') }}</span></a>
+                  class="text-center">{{ __('shop/account.after_sales') }}</span></a>
             </div>
             <div class="order-wrap">
               @if (!count($latest_orders))
                 <div class="no-order d-flex flex-column align-items-center">
                   <div class="icon mb-2"><i class="iconfont">&#xe60b;</i></div>
-                  <div class="text mb-3 text-muted">{{ __('shop/account.no_order') }}<a href="">{{ __('shop/account.to_buy') }}</a></div>
+                  <div class="text mb-3">{{ __('shop/account.no_order') }}<a href="" class="text-brand">{{ __('shop/account.to_buy') }}</a></div>
                 </div>
               @else
                 {{-- <p class="text-muted">近期订单</p> --}}

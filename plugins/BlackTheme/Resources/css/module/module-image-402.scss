@@ -98,14 +98,10 @@
       }
 
       span {
-        color: #111;
         font-weight: bold;
         padding: 6px 10px;
-        background-color: #fff;
         border-radius: 40px;
         font-size: 1rem;
-        box-shadow: 0 5px 30px rgba($color: #000, $alpha: 0.1);
-
         @media (max-width: 768px) {
           font-size: .7rem;
         }
