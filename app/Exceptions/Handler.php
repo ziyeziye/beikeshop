@@ -6,6 +6,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Foundation\Exceptions\RegisterErrorViewPaths;
 use Illuminate\Support\Arr;
 use Throwable;
+use Illuminate\Session\TokenMismatchException;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -71,5 +73,48 @@ class Handler extends ExceptionHandler
         } else {
             (new RegisterErrorViewPaths())();
         }
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \Throwable $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function render($request, Throwable $exception)
+    {
+        if ($request->expectsJson()) {
+            // 处理表单验证异常
+            if ($exception instanceof ValidationException) {
+                return response()->json([
+                    'code'    => 422,
+                    'message' => $exception->getMessage(),
+                    'errors'  => $exception->errors(),
+                ], 422);
+            }
+
+            // CSRF Token 失效
+            if ($exception instanceof TokenMismatchException) {
+                return response()->json([
+                    'message' => __('auth.token_expired'),
+                ], 419);
+            }
+
+            // 其他 Ajax 异常
+            $statusCode = method_exists($exception, 'getStatusCode') ? $exception->getStatusCode() : 500;
+            $message = $exception->getMessage();
+
+            if (empty($message) || $message === 'Server Error') {
+                $message = '服务器错误，请联系管理员';
+            }
+
+            return response()->json([
+                'code' => $statusCode,
+                'message' => $message,
+            ], $statusCode);
+        }
+
+        return parent::render($request, $exception);
     }
 }
